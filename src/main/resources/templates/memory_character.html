@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>文字记忆</title>
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<style>
+    body{
+        -moz-user-select:none;/*火狐*/
+        -webkit-user-select:none;/*webkit浏览器*/
+        -ms-user-select:none;/*IE10*/
+        -khtml-user-select:none;/*早期浏览器*/
+        user-select:none;
+    }
+</style>
+
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <aside class="lyear-layout-sidebar">
+
+            <!-- logo -->
+            <div id="logo" class="sidebar-header">
+                <a href="index.html"><img src="images/logo-sidebar.png" title="LightYear" alt="LightYear"/></a>
+            </div>
+            <div class="lyear-layout-sidebar-scroll">
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item active"><a href="index.html"><i class="mdi mdi-home"></i> 后台首页</a></li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> UI 元素</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="lyear_ui_buttons.html">按钮</a></li>
+                                <li><a href="lyear_ui_cards.html">卡片</a></li>
+                                <li><a href="lyear_ui_grid.html">格栅</a></li>
+                                <li><a href="lyear_ui_icons.html">图标</a></li>
+                                <li><a href="lyear_ui_tables.html">表格</a></li>
+                                <li><a href="lyear_ui_modals.html">模态框</a></li>
+                                <li><a href="lyear_ui_tooltips_popover.html">提示 / 弹出框</a></li>
+                                <li><a href="lyear_ui_alerts.html">警告框</a></li>
+                                <li><a href="lyear_ui_pagination.html">分页</a></li>
+                                <li><a href="lyear_ui_progress.html">进度条</a></li>
+                                <li><a href="lyear_ui_tabs.html">标签页</a></li>
+                                <li><a href="lyear_ui_typography.html">排版</a></li>
+                                <li><a href="lyear_ui_step.html">步骤</a></li>
+                                <li><a href="lyear_ui_other.html">其他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 表单</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="lyear_forms_elements.html">基本元素</a></li>
+                                <li><a href="lyear_forms_radio.html">单选框</a></li>
+                                <li><a href="lyear_forms_checkbox.html">复选框</a></li>
+                                <li><a href="lyear_forms_switch.html">开关</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="lyear_pages_doc.html">文档列表</a></li>
+                                <li><a href="lyear_pages_gallery.html">图库列表</a></li>
+                                <li><a href="lyear_pages_config.html">网站配置</a></li>
+                                <li><a href="lyear_pages_rabc.html">设置权限</a></li>
+                                <li><a href="lyear_pages_add_doc.html">新增文档</a></li>
+                                <li><a href="lyear_pages_guide.html">表单向导</a></li>
+                                <li><a href="lyear_pages_login.html">登录页面</a></li>
+                                <li><a href="lyear_pages_login_2.html">登录页面2</a></li>
+                                <li><a href="lyear_pages_login_3.html">登录页面3</a></li>
+                                <li><a href="lyear_pages_login_4.html">登录页面4</a></li>
+                                <li><a href="lyear_pages_error.html">错误页面</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-language-javascript"></i> JS 插件</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="lyear_js_datepicker.html">日期选取器</a></li>
+                                <li><a href="lyear_js_sliders.html">滑块</a></li>
+                                <li><a href="lyear_js_colorpicker.html">选色器</a></li>
+                                <li><a href="lyear_js_chartjs.html">Chart.js</a></li>
+                                <li><a href="lyear_js_jconfirm.html">对话框</a></li>
+                                <li><a href="lyear_js_tags_input.html">标签插件</a></li>
+                                <li><a href="lyear_js_notify.html">通知消息</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 多级菜单</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="#!">一级菜单</a></li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#!">一级菜单</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="#!">二级菜单</a></li>
+                                        <li class="nav-item nav-item-has-subnav">
+                                            <a href="#!">二级菜单</a>
+                                            <ul class="nav nav-subnav">
+                                                <li><a href="#!">三级菜单</a></li>
+                                                <li><a href="#!">三级菜单</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#!">一级菜单</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <p class="copyright">Copyright &copy; 2019. <a target="_blank"
+                                                                   href="http://lyear.itshubao.com">IT书包</a> All rights
+                        reserved.</p>
+                </div>
+            </div>
+
+        </aside>
+        <!--End 左侧导航-->
+
+        <!--头部信息-->
+        <header class="lyear-layout-header">
+
+            <nav class="navbar navbar-default">
+                <div class="topbar">
+
+                    <div class="topbar-left">
+                        <div class="lyear-aside-toggler">
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                        </div>
+                        <div id="time-left" style="text-align: center;display: none">
+                            <h3 class="mdi mdi-clock" style="display:inline-block;"></h3>
+                            <h3 id="time" style="display:inline-block;">0</h3>
+                        </div>
+                        <span class="navbar-page-title"> 后台首页 </span>
+                    </div>
+
+
+                    <ul class="topbar-right">
+                        <li class="dropdown dropdown-profile">
+                            <a href="javascript:void(0)" data-toggle="dropdown">
+                                <img class="img-avatar img-avatar-48 m-r-10" src="images/users/avatar.jpg" alt="笔下光年"/>
+                                <span>笔下光年 <span class="caret"></span></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="lyear_pages_profile.html"><i class="mdi mdi-account"></i> 个人信息</a></li>
+                                <li><a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i> 修改密码</a>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
+                                <li class="divider"></li>
+                                <li><a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--切换主题配色-->
+                        <li class="dropdown dropdown-skin">
+                            <span data-toggle="dropdown" class="icon-palette"><i class="mdi mdi-palette"></i></span>
+                            <ul class="dropdown-menu dropdown-menu-right" data-stopPropagation="true">
+                                <li class="drop-title"><p>主题</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="site_theme" value="default" id="site_theme_1" checked>
+                    <label for="site_theme_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="site_theme" value="dark" id="site_theme_2">
+                    <label for="site_theme_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="site_theme" value="translucent" id="site_theme_3">
+                    <label for="site_theme_3"></label>
+                  </span>
+                                </li>
+                                <li class="drop-title"><p>LOGO</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="logo_bg" value="default" id="logo_bg_1" checked>
+                    <label for="logo_bg_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_2" id="logo_bg_2">
+                    <label for="logo_bg_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_3" id="logo_bg_3">
+                    <label for="logo_bg_3"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_4" id="logo_bg_4">
+                    <label for="logo_bg_4"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_5" id="logo_bg_5">
+                    <label for="logo_bg_5"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_6" id="logo_bg_6">
+                    <label for="logo_bg_6"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_7" id="logo_bg_7">
+                    <label for="logo_bg_7"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_8" id="logo_bg_8">
+                    <label for="logo_bg_8"></label>
+                  </span>
+                                </li>
+                                <li class="drop-title"><p>头部</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="header_bg" value="default" id="header_bg_1" checked>
+                    <label for="header_bg_1"></label>
+                  </span>
+
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_2" id="header_bg_2">
+                    <label for="header_bg_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_3" id="header_bg_3">
+                    <label for="header_bg_3"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_4" id="header_bg_4">
+                    <label for="header_bg_4"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_5" id="header_bg_5">
+                    <label for="header_bg_5"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_6" id="header_bg_6">
+                    <label for="header_bg_6"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_7" id="header_bg_7">
+                    <label for="header_bg_7"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_8" id="header_bg_8">
+                    <label for="header_bg_8"></label>
+                  </span>
+                                </li>
+                                <li class="drop-title"><p>侧边栏</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="sidebar_bg" value="default" id="sidebar_bg_1" checked>
+                    <label for="sidebar_bg_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_2" id="sidebar_bg_2">
+                    <label for="sidebar_bg_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_3" id="sidebar_bg_3">
+                    <label for="sidebar_bg_3"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_4" id="sidebar_bg_4">
+                    <label for="sidebar_bg_4"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_5" id="sidebar_bg_5">
+                    <label for="sidebar_bg_5"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_6" id="sidebar_bg_6">
+                    <label for="sidebar_bg_6"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_7" id="sidebar_bg_7">
+                    <label for="sidebar_bg_7"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_8" id="sidebar_bg_8">
+                    <label for="sidebar_bg_8"></label>
+                  </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--切换主题配色-->
+                    </ul>
+
+                </div>
+            </nav>
+
+        </header>
+        <!--End 头部信息-->
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div id="title" class="col-lg-12">
+                    <div class="form-group" style="text-align: center;">
+                        <h1 style="">文字记忆</h1>
+                    </div>
+                </div>
+
+
+                <div id="mark_result" class="col-md-12" style="display: none">
+                    <h3 id="correct_num"></h3>
+                    <h3 id="correct_percent"></h3>
+                    <button id="try-again" class="btn btn-success btn-block">再来一次</button>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <select class="form-control" id="difficulty" name="difficulty">
+                            <option value="1">难度：1段</option>
+                            <option value="2">难度：2段</option>
+                            <option value="3">难度：3段</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--                <div class="col-lg-12">-->
+                <!--                    <div class="card">-->
+                <!--                        <div class="card-header bg-primary">-->
+                <!--                            <h4>单词No.1</h4>-->
+                <!--                        </div>-->
+                <!--                        <div class="card-body">-->
+                <!--                            <div id="show1">-->
+                <!--                                <h5 style="font-weight: bold">单词：<label id="word_answer1">hesitate</label></h5>-->
+                <!--                                <h5 style="font-weight: bold">中文：<label>犹豫</label></h5>-->
+                <!--                                <h5 style="font-weight: bold">分析：<label>he-他，sit-坐，ate-吃的过去式</label></h5>-->
+                <!--                                <h5 style="font-weight: bold">记忆：<label>他犹豫的坐着吃</label></h5>-->
+                <!--                            </div>-->
+                <!--                            <div id="word_question1">-->
+                <!--                                <h4>中文：犹豫</h4>-->
+                <!--                                <h4 style="display:inline-block;">单词：</h4>-->
+                <!--                                <input id="word1" type="text"-->
+                <!--                                       style="display: inline-block;border-top: none;border-left: none;border-right: none;outline: none">-->
+                <!--                            </div>-->
+                <!--                            <div id="result1">-->
+                <!--                                <h4 style="font-weight: bold">你的答案：<label>hesitate</label></h4>-->
+                <!--                                <h4 style="color: green">回答正确</h4>-->
+                <!--                                <h4 style="color: red">回答错误</h4>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <button id="start" class="btn btn-primary btn-block btn-lg" href="/number">点击开始</button>
+                    </div>
+                </div>
+                <div id="main-body" class="col-lg-12">
+                    <!--                    <div class="col-lg-12">-->
+                    <!--                        <div class="card">-->
+                    <!--                            <div class="card-header bg-primary">-->
+                    <!--                                <h4>单词No.1</h4>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="card-body">-->
+                    <!--                                <h5 class="word"><b>单词：</b>hesitate</h5>-->
+                    <!--                                <h5 class="word_mean"><b>中文：</b>犹豫</h5>-->
+                    <!--                                <h5 class="analysis"><b>分析：</b>he-他，sit-坐，ate-吃的过去式</h5>-->
+                    <!--                                <h5 class="memory"><b>记忆：</b>他犹豫的坐着吃</h5>-->
+                    <!--                                <h4 style="display:none;"><b>中文：</b>犹豫</h4>-->
+                    <!--                                <h4 style="display:none;"><b>单词：</b><input type="text" class="form-control" style="">-->
+                    <!--                                </h4>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </div>
+                <button id="go" class="btn btn-primary btn-block" style="display: none">已记完，直接开始</button>
+                <button id="answer_submit" class="btn btn-success btn-block" style="display: none">提交答案</button>
+            </div>
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/perfect-scrollbar.min.js"></script>
+<script src="js/main.min.js"></script>
+<script src="js/bootstrap-notify.min.js"></script>
+<script src="js/lightyear.js"></script>
+<script>
+
+    var bgclass = ["bg-primary", "bg-success", "bg-info", "bg-warning", "bg-danger", "bg-purple", "bg-cyan", "bg-brown"];
+
+    function startToWrite() {
+        var word_number = $("#difficulty").val();
+        for (var i = 0; i < word_number; i++) {
+            var tmp_id = "#show" + (i + 1);
+            $("#main-body .card " + tmp_id).hide();
+            var tmp_id2 = "#word_question" + (i + 1);
+            $("#main-body .card " + tmp_id2).show();
+
+            $("#time-left").hide();
+            $("#go").hide();
+            $("#answer_submit").show();
+        }
+    }
+
+    $("#start").on('click', function () {
+        var word_number = $("#difficulty").val();
+        var time = word_number * 60;
+        //var time = 5;
+        var mydata = "num=" + word_number + "&type=character";
+        $.ajax({
+            type: 'get',
+            url: '/getData',
+            data: mydata,
+            async: false,
+            dataType: 'text',
+            success: function (data) {
+                //alert(data);
+                var myJson = JSON.parse(data);
+                var myhtml = "";
+                var len = Object.keys(myJson).length;
+                for (var i = 0; i < len; i++) {
+                    myhtml += "<div class=\"card\">";
+                    myhtml += "<div class=\"card-header " + bgclass[i % 8] + "\">";
+                    myhtml += "<h4>段落No." + (i + 1) + "</h4>";
+                    myhtml += "</div>";
+                    myhtml += "<div class=\"card-body\">";
+                    myhtml += "<div id=\"show" + (i + 1) + "\">";
+                    myhtml += "<h5>"+myJson[i].character+"</h5>";
+                    myhtml += "</div>";
+                    myhtml += "<div id=\"word_question" + (i + 1) + "\" style='display: none'>";
+                    myhtml += "<h4 style=\"display:inline-block;\">默写段落：</h4>";
+                    //myhtml += "<input id=\"word" + (i + 1) + "\" type=\"text\" style=\"display: inline-block;border-top: none;border-left: none;border-right: none;outline: none\">";
+                    myhtml+="<textarea id = \"word" + (i + 1) + "\" class='form-control' rows='7'></textarea>"
+                    myhtml += "</div>";
+                    myhtml += "<div id=\"result" + (i + 1) + "\" style='display: none'>";
+                    myhtml += "</div></div></div>";
+                }
+                $("#main-body ").html(myhtml);
+                $("#go").show();
+
+            }, error: function () {
+                alert("题目获取失败");
+            }
+        });
+
+        $("#difficulty").hide();
+        $("#start").hide();
+        $("#title").hide();
+        $("#time").text(time);
+        $("#time-left").show();
+        var settime = setInterval(function () {
+            if (time > 0) {
+                $('#time').text(--time);
+            } else {
+                startToWrite();
+                clearInterval(settime);
+                $('html,body').animate({scrollTop: 0}, 100);
+                return false;
+            }
+        }, 1000);
+
+        $("#go").on('click', function (e) {
+            clearInterval(settime);
+            startToWrite();
+            $('html,body').animate({scrollTop: 0}, 100);
+            return false;
+        });
+
+        $("#answer_submit").on('click',function (e) {
+            var cnt = 0;
+            $("#answer_submit").hide();
+            var word_number = $("#difficulty").val();
+            for (var i = 0; i < word_number; i++) {
+                //var myhtml = "<h4 style=\"font-weight: bold\">你的答案：<label>"+$("#word"+(i+1)).val()+"</label></h4>";
+                var myhtml = "<h4>--------</h4>";
+                var len1 = $("#show"+(i+1)).text().length;
+                //alert(len1);
+                var len2 = $("#word"+(i+1)).val().length;
+                //alert(len2);
+                var k = 0;
+                var str1 = $("#show"+(i+1)).text();
+                var str2 = $("#word"+(i+1)).val();
+                var len = len1>=len2?len2:len1;
+
+                for(k=0;k<len;k++){
+                    if(str1[k]!=str2[k]){
+                        myhtml+="<span style='color: red'>"+str2[k]+"</span>";
+                    }else{
+                        myhtml+="<span>"+str2[k]+"</span>";
+                    }
+                }
+                if(len2>len1){
+                    for(;k<len2;k++){
+                        myhtml+="<span style='color: red'>"+str2[k]+"</span>";
+                    }
+                }
+
+                if($("#word"+(i+1)).val()!=$("#show"+(i+1)).text()){
+                    myhtml+="<h4>--------</h4><h4 style=\"color: red\">回答错误</h4>";
+                }else{
+                    cnt++;
+                    myhtml+="<h4>--------</h4><h4 style=\"color: green\">回答正确</h4>";
+                }
+                $("#result"+(i+1)).html(myhtml);
+                $("#word_question"+(i+1)).hide();
+                $("#result"+(i+1)).show();
+                $("#show"+(i+1)).show();
+            }
+            $("#correct_num").text("准确数："+cnt+"/"+word_number);
+            $("#correct_percent").text("准确率："+Math.round((cnt/word_number)*100)+"%");
+            $("#mark_result").show();
+            $('html,body').animate({scrollTop: 0}, 100);
+            return false;
+
+        });
+
+        $("#try-again").on('click',function () {
+            location.reload();
+        })
+    });
+</script>
+</body>
+</html>
