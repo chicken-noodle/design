@@ -2,15 +2,14 @@ package minqi.xiao.design.controller;
 
 import minqi.xiao.design.dao.Dao;
 import minqi.xiao.design.model.Character;
+import minqi.xiao.design.model.Picture;
+import minqi.xiao.design.model.Poem;
 import minqi.xiao.design.model.Word;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Vector;
+import java.util.*;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -20,7 +19,7 @@ public class Controller {
 
     @ResponseBody
     @RequestMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "hello world!";
     }
 
@@ -83,71 +82,117 @@ public class Controller {
 
 
     @RequestMapping("/number")
-    public String memoryNumber(){
+    public String memoryNumber() {
         return "memory_number";
     }
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @RequestMapping("/word")
-    public String memoryWord(){
+    public String memoryWord() {
         return "memory_word";
     }
 
     @RequestMapping("/picture")
-    public String memoryPicture(){
+    public String memoryPicture() {
         return "memory_picture";
     }
 
     @RequestMapping("/character")
-    public String memoryCharacter(){
+    public String memoryCharacter() {
         return "memory_character";
     }
 
     @RequestMapping("/poem")
-    public String memoryPoem(){
+    public String memoryPoem() {
         return "memory_poem";
     }
 
     @ResponseBody
+    @RequestMapping("/postPicture")
+    public String postPicture(){
+        for(int i=0;i<50;i++){
+            String uuid = UUID.randomUUID().toString();
+            dao.postPictureUUID(uuid);
+        }
+        return "success";
+    }
+
+    @ResponseBody
     @RequestMapping("/getData")
-    public String getData(Integer num, String type){
+    public String getData(Integer num, String type) {
         Random random = new Random();
         Vector<Integer> vector = new Vector<>();
 
-        if(type.equals("word")){
+        if (type.equals("word")) {
             List<Word> l = new ArrayList<>();
             int max_num = dao.getWordNum();
-            while(num>0){
-                Integer tmp = random.nextInt(max_num)+1;
-                if(!vector.contains(tmp)){
+            while (num > 0) {
+                Integer tmp = random.nextInt(max_num) + 1;
+                if (!vector.contains(tmp)) {
                     vector.add(tmp);
                     num--;
                 }
             }
-            for(Integer integer : vector){
+            for (Integer integer : vector) {
                 Word word = dao.getWordById(integer);
                 l.add(word);
             }
             //System.out.println(l.toString());
             return l.toString();
 
-        }else if(type.equals("character")){
+        } else if (type.equals("character")) {
             List<Character> l = new ArrayList<>();
             int max_num = dao.getCharacterNum();
-            while(num>0){
-                Integer tmp = random.nextInt(max_num)+1;
-                if(!vector.contains(tmp)){
+            while (num > 0) {
+                Integer tmp = random.nextInt(max_num) + 1;
+                if (!vector.contains(tmp)) {
                     vector.add(tmp);
                     num--;
                 }
             }
-            for(Integer integer : vector){
+            for (Integer integer : vector) {
                 Character character = dao.getCharacterById(integer);
                 l.add(character);
+            }
+            return l.toString();
+        } else if (type.equals("poem")) {
+            List<Poem> l = new ArrayList<>();
+            int max_num = dao.getPoemNum();
+            while (num > 0) {
+                Integer tmp = random.nextInt(max_num) + 1;
+                if (!vector.contains(tmp)) {
+                    vector.add(tmp);
+                    num--;
+                }
+            }
+            //Collections.sort(vector);
+            for (Integer integer : vector) {
+                Poem poem = dao.getPoemById(integer);
+                l.add(poem);
+            }
+            return l.toString();
+        } else if(type.equals("picture")){
+            List<Picture> l = new ArrayList<>();
+            int max_num = dao.getPictureNum();
+            //System.out.println(max_num);
+            while (num > 0) {
+                Integer tmp = random.nextInt(max_num) + 1;
+                //System.out.println(tmp);
+                if (!vector.contains(tmp)) {
+                    vector.add(tmp);
+                    num--;
+                }else{
+                    //System.out.println("呵呵");
+                }
+            }
+
+            for (Integer integer : vector) {
+                Picture picture = dao.getPictureById(integer);
+                l.add(picture);
             }
             return l.toString();
         }
@@ -155,7 +200,6 @@ public class Controller {
         else
             return "";
     }
-
 
 
 }
