@@ -3,6 +3,7 @@ package minqi.xiao.design.controller;
 import minqi.xiao.design.dao.Dao;
 import minqi.xiao.design.model.*;
 import minqi.xiao.design.model.Character;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -217,9 +218,10 @@ public class Controller {
     }
 
     @RequestMapping("/login_check")
-    public String loginCheck(String username, String password, HttpServletRequest request) {
+    public String loginCheck(String username, String password, HttpServletRequest request, Model model) {
         List<User> users = dao.lognkCheck(username, password);
         if (users.size() < 1) {
+            model.addAttribute("message","用户名或密码错误");
             return "login";
         } else {
             request.getSession().setAttribute("user", username);

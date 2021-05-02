@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -172,6 +172,7 @@
                             立即登录
                         </button>
                     </div>
+                    <p style="color:red;" th:text="${message}"></p>
                     <span>没有账号？<a href="/register">点此</a>注册</span>
                 </form>
                 <hr>
