@@ -1,14 +1,13 @@
 package minqi.xiao.design.controller;
 
 import minqi.xiao.design.dao.Dao;
+import minqi.xiao.design.model.*;
 import minqi.xiao.design.model.Character;
-import minqi.xiao.design.model.Picture;
-import minqi.xiao.design.model.Poem;
-import minqi.xiao.design.model.Word;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @org.springframework.stereotype.Controller
@@ -80,6 +79,16 @@ public class Controller {
 //        return "true";
 //    }
 
+
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
 
     @RequestMapping("/number")
     public String memoryNumber() {
@@ -200,6 +209,42 @@ public class Controller {
         else
             return "";
     }
+
+    @RequestMapping("/register_check")
+    public String registerCheck(User user) {
+        dao.insertSelective(user);
+        return "login";
+    }
+
+    @RequestMapping("/login_check")
+    public String loginCheck(String username, String password, HttpServletRequest request) {
+        List<User> users = dao.lognkCheck(username, password);
+        if (users.size() < 1) {
+            return "login";
+        } else {
+            request.getSession().setAttribute("user", username);
+            return "index";
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping("/get_info")
+    public String getInfo(HttpServletRequest request){
+        String username = request.getSession().getAttribute("user") == null ? "":request.getSession().getAttribute("user").toString();
+        if(username.equals("")){
+            return "";
+        }
+        User user = dao.selectByUsername(username);
+        return user.toString();
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().removeAttribute("user");
+        return "login";
+    }
+
+
 
 
 }

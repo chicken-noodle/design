@@ -1,11 +1,10 @@
 package minqi.xiao.design.dao;
 
+import minqi.xiao.design.model.*;
 import minqi.xiao.design.model.Character;
-import minqi.xiao.design.model.Picture;
-import minqi.xiao.design.model.Poem;
-import minqi.xiao.design.model.Word;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -41,6 +40,25 @@ public interface Dao {
     //picture：插入
     @Insert("insert into memory_picture (uuid) value (#{uuid})")
     public void postPictureUUID(String uuid);
+
+    @Select("select * from user where username=#{username} and password=#{password}")
+    List<User> lognkCheck(@Param("username") String username, @Param("password") String password );
+
+    @Select("select * from user where username = #{username}")
+    User selectByUsername(String username);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+
 
 
 

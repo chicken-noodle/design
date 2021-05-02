@@ -4,14 +4,16 @@ public class Picture {
     private int id;
     private String uuid;
     private String picture_name;
+    private String picture_location;
 
     public Picture() {
     }
 
-    public Picture(int id, String uuid, String picture_name) {
+    public Picture(int id, String uuid, String picture_name, String picture_location) {
         this.id = id;
         this.uuid = uuid;
         this.picture_name = picture_name;
+        this.picture_location = picture_location;
     }
 
     public int getId() {
@@ -38,6 +40,14 @@ public class Picture {
         this.picture_name = picture_name;
     }
 
+    public String getPicture_location() {
+        return picture_location;
+    }
+
+    public void setPicture_location(String picture_location) {
+        this.picture_location = picture_location;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");
@@ -47,6 +57,8 @@ public class Picture {
                 .append(uuid).append('\"');
         sb.append(",\"picture_name\":\"")
                 .append(picture_name).append('\"');
+        sb.append(",\"picture_location\":\"")
+                .append(picture_location).append('\"');
         sb.append('}');
         return sb.toString();
     }
