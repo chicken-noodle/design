@@ -59,6 +59,9 @@ public interface Dao {
 
     int updateByPrimaryKey(User record);
 
+    @Select("select count(*) from user where username = #{username}")
+    public int registerCheck(User user);
+
 
 
 

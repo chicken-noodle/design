@@ -212,7 +212,14 @@ public class Controller {
     }
 
     @RequestMapping("/register_check")
-    public String registerCheck(User user) {
+    public String registerCheck(User user,Model model) {
+
+        int ans = dao.registerCheck(user);
+        if(ans>0){
+            model.addAttribute("tip","账号已存在，请重新注册");
+            return "register";
+        }
+
         dao.insertSelective(user);
         return "login";
     }
@@ -245,6 +252,10 @@ public class Controller {
         request.getSession().removeAttribute("user");
         return "login";
     }
+
+
+
+
 
 
 
